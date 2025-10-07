@@ -1,0 +1,1 @@
+https://leetcode.com/discuss/post/5119937/prefix-sum-problems-by-c0d3m-08l9/
