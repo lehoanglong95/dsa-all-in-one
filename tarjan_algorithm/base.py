@@ -12,8 +12,8 @@ def tarjan_algorithm(n: int, graphs: dict) -> tuple[list[int], list[list[int]]]:
         times += 1
         nums[u] = lows[u] = times
         for v in graphs[u]:
-            childrens += 1
             if nums[v] == -1: # descedant
+                childrens += 1
                 dfs(v, u)
                 lows[u] = min(lows[u], lows[v])
                 if parent != -1 and nums[u] <= lows[v]:
@@ -22,7 +22,7 @@ def tarjan_algorithm(n: int, graphs: dict) -> tuple[list[int], list[list[int]]]:
                     bridges.append([u, v])
             elif v != parent: # ancestor
                 lows[u] = min(lows[u], nums[v])
-         if parent == -1 and childrens >= 2:
+        if parent == -1 and childrens >= 2:
             articulations.append(u)
 
     dfs(0, -1)
