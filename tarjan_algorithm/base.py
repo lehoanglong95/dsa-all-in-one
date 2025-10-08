@@ -7,8 +7,10 @@ def tarjan_algorithm(n: int, graphs: dict) -> tuple[list[int], list[list[int]]]:
     articulations = []
     bridges = []
     childrens = 0
+    
     def dfs(u, parent):
         nonlocal times
+        nonlocal childrens
         times += 1
         nums[u] = lows[u] = times
         for v in graphs[u]:
