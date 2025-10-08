@@ -6,7 +6,7 @@ def tarjan_algorithm(n: int, graphs: dict) -> tuple[list[int], list[list[int]]]:
     lows = [-1] * n
     articulations = []
     bridges = []
-
+    
     def dfs(u, parent):
         nonlocal times
         childrens = 0
